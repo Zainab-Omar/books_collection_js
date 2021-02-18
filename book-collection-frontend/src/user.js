@@ -22,6 +22,8 @@ class User {
         container.innerHTML = ''
         let userHTML = `<h1 id=${this.id}>Welcome ${this.name}</h1>`
         container.insertAdjacentHTML('beforeend',userHTML)
+        Book.renderBookForm(this.id)
     }
+
 
 }
