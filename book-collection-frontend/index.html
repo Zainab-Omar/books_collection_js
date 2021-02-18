@@ -3,11 +3,31 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
+    <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
     <title>Books Collection JS APP</title>
   </head>
   <body>
-   <p>Sample text - replace me! </p>
+      <div class="container" id="container">
 
-   <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
+          <div id="fake-login-form">
+            <form id="form">
+                <label>user_name:</label>
+                <input type="text" id="name">
+                <input type="submit">
+              </form> 
+          </div>
+
+          <div id="book-form">
+              <!-- insert your form to create new book -->
+          </div>
+
+          <div id="books-container">
+              <!-- fetch request to read all current user books -->
+          </div>
+
+      </div>
+   
+
+   
   </body>
 </html>
