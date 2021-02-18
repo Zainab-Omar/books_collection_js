@@ -608,3 +608,87 @@ Processing by Api::V1::UsersController#create as JSON
 Completed 200 OK in 32ms (Views: 0.3ms | ActiveRecord: 18.4ms | Allocations: 4461)
 
 
+Started POST "/api/v1/users" for ::1 at 2021-02-18 15:32:39 -0600
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Zainab"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Zainab"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 659)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2021-02-18 15:32:39 -0600
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `show'
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 712)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-18 15:47:54 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Batman"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Batman"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Batman"], ["created_at", "2021-02-18 21:47:54.550105"], ["updated_at", "2021-02-18 21:47:54.550105"]]
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `create'
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/users_controller.rb:12:in `create'
+Completed 200 OK in 19ms (Views: 0.4ms | ActiveRecord: 10.9ms | Allocations: 3750)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-18 15:51:09 -0600
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Zainab"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Zainab"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 642)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2021-02-18 15:51:09 -0600
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 725)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-18 16:05:00 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Zainab"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Zainab"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/1
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 656)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2021-02-18 16:05:00 -0600
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `show'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 725)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-18 16:05:35 -0600
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Marwan"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Marwan"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/3
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 642)
+
+
+Started GET "/api/v1/users/3" for ::1 at 2021-02-18 16:05:35 -0600
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"3", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:19:in `show'
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 712)
+
+
