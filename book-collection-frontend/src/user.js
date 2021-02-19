@@ -15,14 +15,24 @@ class User {
                 newUser.renderUser()
             })
         })
+        
     }
     
     renderUser(){
         const container = document.querySelector('#container')
-        container.innerHTML = ''
+        // container.innerHTML = ''
+        let form = document.querySelector('#form')
+        form.remove()
         let userHTML = `<h1 id=${this.id}>Welcome ${this.name}</h1>`
-        container.insertAdjacentHTML('beforeend',userHTML)
+        container.insertAdjacentHTML('afterbegin',userHTML)
         Book.renderBookForm(this.id)
+        
+    }
+
+    renderExistedBooks(){
+        // let books_container = document.querySelector('#books-container')
+      
+       
     }
 
 

@@ -7,7 +7,7 @@ class Book {
     }
 
     static renderBookForm(user_id){
-        const container = document.querySelector('#container')
+        const book_form = document.querySelector('#book-form')
         let formHTML = `<div id="form-container">
         <h2>Create a new Book</h2>
         <form id="book-form">
@@ -21,6 +21,6 @@ class Book {
         </form>
         </div>`
 
-    container.insertAdjacentHTML('beforeend', formHTML)
+    book_form.insertAdjacentHTML('beforeend', formHTML)
     }
 }
