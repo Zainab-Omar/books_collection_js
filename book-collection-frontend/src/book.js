@@ -17,7 +17,7 @@ class Book {
         <input type="text" id="book-author"/><br><br>
         <label>Book Img_url:</label>
         <input type="text" id="book-img"/><br><br>
-        <input type="submit"/>
+        <input type="submit"><br><br>
         </form>
         </div>`
 

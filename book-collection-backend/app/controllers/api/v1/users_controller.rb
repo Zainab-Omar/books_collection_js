@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
     def index
         users = User.all
-        render json: users
+        render json: users, include: [:books]
     end
 
     def create
@@ -17,7 +17,7 @@ class Api::V1::UsersController < ApplicationController
 
     def show
         user = User.find_by(id: params[:id])
-        render json: user
+        render json: user, include: [:books]
     end
 
     private
