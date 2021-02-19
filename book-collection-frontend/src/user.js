@@ -31,16 +31,18 @@ class User {
     }
 
     renderExistedBooks(){
-        const books_container = document.querySelector('#books-container')
+        // const books_container = document.querySelector('#books-container')
         if(this.books){
             this.books.forEach(book => {
-                let booksHTML = `<div id="single-book">
-                <img src="${book.img_url}" class="image">
-                <p>Title: ${book.title}</p>
-                <p>Author Name: ${book.author}</p>
-                </div>`
+                let newBook = new Book(book)
+                newBook.renderBooks()
+                // let booksHTML = `<div id="single-book">
+                // <img src="${book.img_url}" class="image">
+                // <p>Title: ${book.title}</p>
+                // <p>Author Name: ${book.author}</p>
+                // </div>`
 
-                books_container.insertAdjacentHTML('beforeend', booksHTML)
+                // books_container.insertAdjacentHTML('beforeend', booksHTML)
 
             })
         }

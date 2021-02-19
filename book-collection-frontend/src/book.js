@@ -3,6 +3,7 @@ class Book {
         this.id = book.id
         this.title = book.title
         this.author = book.author
+        this.img_url = book.img_url
         this.created_at = book.created_at
     }
 
@@ -22,5 +23,16 @@ class Book {
         </div>`
 
     book_form.insertAdjacentHTML('beforeend', formHTML)
+    }
+
+    renderBooks(){
+        const books_container = document.querySelector('#books-container')
+        let booksHTML = `<div id="single-book">
+        <img src="${this.img_url}" class="image">
+        <p>Title: ${this.title}</p>
+        <p>Author Name: ${this.author}</p>
+        </div>`
+
+        books_container.insertAdjacentHTML('beforeend', booksHTML)
     }
 }
