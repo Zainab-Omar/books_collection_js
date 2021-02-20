@@ -23,6 +23,8 @@ class Book {
         </div>`
 
     book_form.insertAdjacentHTML('beforeend', formHTML)
+    Book.createBook(user_id)
+
     }
 
     renderBooks(){
@@ -39,4 +41,6 @@ class Book {
 
         books_container.insertAdjacentHTML('beforeend', booksHTML)
     }
+
+
 }
