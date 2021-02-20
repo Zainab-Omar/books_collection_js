@@ -43,13 +43,15 @@ class Book {
     }
 
     static createBook(user_id){
-        const book_form = document.querySelector('#book-form')
+        let book_form = document.querySelector('#book-form')
         book_form.addEventListener("submit", function(e){
             e.preventDefault()
             fetchRequest.createNewBook(e, user_id)
             .then(json => {
+                e.target.reset();
                 let newBook = new Book(json)
                 newBook.renderBooks()
+                
             })
         })
     }
