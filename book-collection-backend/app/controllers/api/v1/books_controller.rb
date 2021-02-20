@@ -4,6 +4,11 @@ class Api::V1::BooksController < ApplicationController
         render json: books
     end
 
+    def create
+        book = Book.create(book_params)
+        render json: book
+    end
+
     private
     def book_params
         params.require(:book).permit(:title, :author, :image_url, :user_id)
