@@ -42,5 +42,15 @@ class Book {
         books_container.insertAdjacentHTML('beforeend', booksHTML)
     }
 
-
+    static createBook(user_id){
+        const book_form = document.querySelector('#book-form')
+        book_form.addEventListener("submit", function(e){
+            e.preventDefault()
+            fetchRequest.createNewBook(e, user_id)
+            .then(json => {
+                let newBook = new Book(json)
+                newBook.renderBooks()
+            })
+        })
+    }
 }
