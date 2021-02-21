@@ -10,6 +10,12 @@ class Api::V1::BooksController < ApplicationController
         render json: book
     end
 
+    def destroy
+        book = Book.find_by(id: params[:id])
+        book.destroy
+        render json: book
+    end
+
     private
     def book_params
         params.require(:book).permit(:title, :author, :img_url, :user_id)

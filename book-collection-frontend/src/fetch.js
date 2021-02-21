@@ -37,4 +37,5 @@ class FetchRequest {
         })
         .then(response => response.json())
     }
+
 }

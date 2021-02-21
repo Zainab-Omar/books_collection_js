@@ -5,5 +5,5 @@
 [x] build a form for a user to create a new book(index.html).
 [x] fetch request to read or create new user.(C and R in curd).
 [x] fetch request to show all books asssociated with a user(R in curd).
-[] fetch request to post a new book (C in curd).
+[x] fetch request to post a new book (C in curd).
 [] fetch request to delete a book
