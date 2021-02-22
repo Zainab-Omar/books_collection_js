@@ -62,10 +62,11 @@ class Book {
         books_container.addEventListener("click", function(e){
             if (e.target.classList.contains("delete")){
              let bookId = e.target.dataset.bookId;
-                // console.log(bookId)
+             console.log(bookId)
+            //  debugger
              fetchRequest.deleteBook(bookId)
-
              e.target.parentNode.remove()
+             
             }
         })
     }

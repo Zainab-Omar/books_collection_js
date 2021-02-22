@@ -39,9 +39,15 @@ class FetchRequest {
     }
 
     deleteBook(bookId){
+        //  debugger
         fetch(`${this.baseUrl}/books/${bookId}`, {
-            method: "DELETE"
-        })    
+            method: 'DELETE'
+        }) 
+          .then(response => response.json())
+          .then(json => console.log(json))
+          .catch((error) => {
+            console.error('Error:', error);
+          });  
     }
 
 }
