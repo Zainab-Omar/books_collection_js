@@ -40,7 +40,7 @@ class Book {
         </div>`
 
         books_container.insertAdjacentHTML('beforeend', booksHTML)
-        // this.removeBook()
+        this.removeBook()
     }
 
     static createBook(user_id){
@@ -54,6 +54,19 @@ class Book {
                 newBook.renderBooks()
                 
             })
+        })
+    }
+
+    removeBook(){
+        let books_container = document.querySelector("#books-container")
+        books_container.addEventListener("click", function(e){
+            if (e.target.classList.contains("delete")){
+             let bookId = e.target.dataset.bookId;
+                // console.log(bookId)
+             fetchRequest.deleteBook(bookId)
+
+             e.target.parentNode.remove()
+            }
         })
     }
 

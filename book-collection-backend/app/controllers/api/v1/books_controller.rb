@@ -11,7 +11,7 @@ class Api::V1::BooksController < ApplicationController
     end
 
     def destroy
-        binding.pry
+        # binding.pry
         book = Book.find_by(id: params[:id]).delete
         render json: book
     end
