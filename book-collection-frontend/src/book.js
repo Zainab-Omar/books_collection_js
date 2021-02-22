@@ -40,6 +40,7 @@ class Book {
         </div>`
 
         books_container.insertAdjacentHTML('beforeend', booksHTML)
+        // this.removeBook()
     }
 
     static createBook(user_id){
@@ -55,4 +56,7 @@ class Book {
             })
         })
     }
+
+    
+    
 }

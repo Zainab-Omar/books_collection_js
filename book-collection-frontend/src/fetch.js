@@ -38,4 +38,10 @@ class FetchRequest {
         .then(response => response.json())
     }
 
+    deleteBook(bookId){
+        fetch(`${this.baseUrl}/books/${bookId}`, {
+            method: "DELETE"
+        })    
+    }
+
 }
