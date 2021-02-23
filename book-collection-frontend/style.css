@@ -42,3 +42,7 @@ button {
     float: left;
     padding: 10px;
   }
+
+  .errors{
+    color: red
+  }
