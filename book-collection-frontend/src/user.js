@@ -22,7 +22,9 @@ class User {
         const container = document.querySelector('#container')
         // container.innerHTML = ''
         let form = document.querySelector('#form')
+        let appTitle = document.querySelector('#app-title')
         form.remove()
+        appTitle.remove()
         let userHTML = `<h1 id=${this.id}>Welcome ${this.name}</h1>`
         container.insertAdjacentHTML('afterbegin',userHTML)
         Book.renderBookForm(this.id)

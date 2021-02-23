@@ -20,6 +20,7 @@ class Book {
         <input type="text" id="book-img"/><br><br>
         <input type="submit"><br><br>
         </form>
+        <hr>
         </div>`
 
     book_form.insertAdjacentHTML('beforeend', formHTML)
@@ -29,7 +30,7 @@ class Book {
 
     renderBooks(){
         const books_container = document.querySelector('#books-container')
-        let booksHTML = `<div id="single-book">
+        let booksHTML = ` <div class="single-book">
         <img src="${this.img_url}" class="image">
         <p>Title: ${this.title}</p>
         <p>Author Name: ${this.author}</p>

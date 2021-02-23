@@ -1,7 +1,43 @@
-p {
+/* p {
     color: blue;
-}
+} */
+
+body {
+    margin: 10;
+    padding: 10;
+    /* background-image: url("https://prodimage.images-bn.com/pimages/2940157114121_p0_v2_s550x406.jpg"); */
+    background-color: lightcyan;
+    /* text-align: center; */
+  }
+
+  #fake-login-form, #app-title{
+    text-align: center;
+  }
+
 .image{
     height: 200px;
     width: 200px;
 }
+
+button {
+    font-size: .65em;
+    color: #fff;
+    background-color: green;
+    border-radius: 10px;
+  }
+  
+  button.delete {
+    float: left;
+    background-color: red;
+  }
+
+  h1{
+      color: palevioletred;
+  }
+  h2 {
+      color: blue;
+  }
+
+  div.single-book{
+    float: left;
+  }
