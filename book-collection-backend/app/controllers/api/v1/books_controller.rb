@@ -2,6 +2,7 @@ class Api::V1::BooksController < ApplicationController
     def index
         books = Book.all
         render json: books
+        # render json: BookSerializer.new(books)
     end
 
     def create
@@ -12,6 +13,7 @@ class Api::V1::BooksController < ApplicationController
         #  else
             book = Book.create(book_params)
             render json: book
+            # render json: BookSerializer.new(book)
         #  end  
     end
 
@@ -20,6 +22,7 @@ class Api::V1::BooksController < ApplicationController
         book = Book.find_by(id: params[:id])
         book.delete
         render json: book
+        # render json: BookSerializer.new(books)
     end
 
     private

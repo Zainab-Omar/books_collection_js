@@ -1,8 +1,9 @@
 class User {
-    constructor(user){
+    constructor(user, userAttributes){
         this.id = user.id
-        this.name = user.name
-        this.books = user.books
+        this.name = userAttributes.name
+        this.books = userAttributes.books
+        // console.log(this)
     }
 
     static fakeLogin(){
@@ -10,8 +11,13 @@ class User {
         form.addEventListener("submit", function(e){
             e.preventDefault();
             fetchRequest.findOrCreateUser(e)
-            .then(user => {
-                let newUser = new User(user)
+            .then(json => {
+                // let user = json.data.attributes.name
+                // console.log(json)
+                let user = json.data
+                // console.log(user)
+                let newUser = new User(user, user.attributes)
+                // console.log(newUser)
                 newUser.renderUser()
             })
         })
@@ -36,7 +42,9 @@ class User {
         // const books_container = document.querySelector('#books-container')
         if(this.books){
             this.books.forEach(book => {
+                // console.log(book)
                 let newBook = new Book(book)
+                //  console.log(newBook)
                 newBook.renderBooks()
                 // let booksHTML = `<div id="single-book">
                 // <img src="${book.img_url}" class="image">
