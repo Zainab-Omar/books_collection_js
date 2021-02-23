@@ -5,7 +5,7 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def create
-        # binding.pry
+        #  binding.pry
         if user = User.find_by(name: user_params[:name])
             redirect_to "/api/v1/users/#{user.id}"
         else

@@ -7,4 +7,4 @@
 [x] fetch request to show all books asssociated with a user(R in curd).
 [x] fetch request to post a new book (C in curd).
 [x] fetch request to delete a book
-[] add CSS to my app
+[x] add CSS to my app
