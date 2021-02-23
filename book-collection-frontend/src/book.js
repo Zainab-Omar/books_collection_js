@@ -34,7 +34,7 @@ class Book {
         <img src="${this.img_url}" class="image">
         <p>Title: ${this.title}</p>
         <p>Author Name: ${this.author}</p>
-        <p>Created_at: ${this.created_at}</p>
+        <p>Created_at: ${new Date(this.created_at).toLocaleDateString()}</p>
         <button class="delete" data-book-id=${this.id}>
             Delete
           </button><br><br>
