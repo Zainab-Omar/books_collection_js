@@ -7,14 +7,14 @@ class Api::V1::BooksController < ApplicationController
 
     def create
         #   binding.pry
-        #  user = User.find_by(id:params[:book][:user_id])
-        #  if user.books.find_by(title: params[:book][:title])
-        #     render json{message: "Book Already Exist"}
-        #  else
-            book = Book.create(book_params)
-            render json: book
+      
+            book = Book.new(book_params)
+            if book.save
+               render json: book
+            else
+                render json: {errors: book.errors.full_messages}
             # render json: BookSerializer.new(book)
-        #  end  
+          end  
     end
 
     def destroy

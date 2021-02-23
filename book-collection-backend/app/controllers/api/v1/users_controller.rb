@@ -16,9 +16,6 @@ class Api::V1::UsersController < ApplicationController
             else
                 render json: {errors: user.errors.full_messages}
             end
-            # user = User.create(user_params)
-            # # render json: user
-            # render json: UserSerializer.new(user)
         end
         
     end

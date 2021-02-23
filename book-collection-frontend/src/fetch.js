@@ -44,7 +44,16 @@ class FetchRequest {
             })
 
         })
-        .then(response => response.json())
+        // .then(response => response.json())
+        .then(response => {
+            console.log(response)
+            if (response.ok) {
+                return response.json()
+            }
+            return response.json().then((error) => {
+                throw new Error(error);
+              })
+        })
     }
 
     deleteBook(bookId){

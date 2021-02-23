@@ -50,6 +50,15 @@ class Book {
             e.preventDefault()
             fetchRequest.createNewBook(e, user_id)
             .then(json => {
+                console.log(json.errors)
+                if (json.errors){
+                    let h2 = document.querySelector("h2")
+                   //  console.log(json.errors)
+                    json.errors.forEach(error => {
+                        let p = `<p class="errors">${error}</p>`
+                        h2.insertAdjacentHTML('afterend', p)
+                    })
+                    }
                 e.target.reset();
                 let newBook = new Book(json)
                 newBook.renderBooks()
