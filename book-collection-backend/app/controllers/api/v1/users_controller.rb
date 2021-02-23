@@ -6,13 +6,19 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def create
-        #  binding.pry
+        #   binding.pry
         if user = User.find_by(name: user_params[:name])
             redirect_to "/api/v1/users/#{user.id}"
         else
-            user = User.create(user_params)
-            # render json: user
-            render json: UserSerializer.new(user)
+            user = User.new(user_params)
+            if user.save
+               render json: UserSerializer.new(user) 
+            else
+                render json: {errors: user.errors.full_messages}
+            end
+            # user = User.create(user_params)
+            # # render json: user
+            # render json: UserSerializer.new(user)
         end
         
     end

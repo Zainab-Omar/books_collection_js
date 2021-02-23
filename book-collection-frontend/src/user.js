@@ -12,12 +12,15 @@ class User {
             e.preventDefault();
             fetchRequest.findOrCreateUser(e)
             .then(json => {
-                // let user = json.data.attributes.name
-                // console.log(json)
+                 if (json.errors){
+                 let h1 = document.querySelector("#app-title")
+                //  console.log(json.errors)
+                 let p = `<p class="errors">${json.errors}</p>`
+                 h1.insertAdjacentHTML('afterend', p)
+                 }
+                 
                 let user = json.data
-                // console.log(user)
                 let newUser = new User(user, user.attributes)
-                // console.log(newUser)
                 newUser.renderUser()
             })
         })
