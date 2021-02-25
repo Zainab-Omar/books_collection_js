@@ -9,6 +9,7 @@ class Book {
 
     static renderBookForm(user_id){
         const book_form = document.querySelector('#book-form')
+
         let formHTML = `<div id="form-container">
         <h2>Create a new Book</h2>
         <form id="book-form">
@@ -23,13 +24,14 @@ class Book {
         <hr>
         </div>`
 
-    book_form.insertAdjacentHTML('beforeend', formHTML)
-    Book.createBook(user_id)
+       book_form.insertAdjacentHTML('beforeend', formHTML)
+       Book.createBook(user_id)
 
     }
 
     renderBooks(){
         const books_container = document.querySelector('#books-container')
+
         let booksHTML = ` <div class="single-book">
         <img src="${this.img_url}" class="image">
         <p>Title: ${this.title}</p>
@@ -49,9 +51,10 @@ class Book {
     static createBook(user_id){
         let book_form = document.querySelector('#book-form')
         book_form.addEventListener("submit", function(e){
-            e.preventDefault()
-            fetchRequest.createNewBook(e, user_id)
-            .then(json => {
+        e.preventDefault()
+        
+        fetchRequest.createNewBook(e, user_id)
+        .then(json => {
                 console.log(json.errors)
                 if (json.errors){
                     let h2 = document.querySelector("h2")

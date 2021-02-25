@@ -9,7 +9,7 @@
 [x] fetch request to delete a book
 [x] add CSS to my app
 [x] remove commented codes
-[] dry my code
+[x] dry my code
 [] write ReadMe 
 [] write blog
 [] record video

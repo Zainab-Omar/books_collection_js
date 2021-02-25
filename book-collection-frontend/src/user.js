@@ -32,9 +32,7 @@ class User {
         let userHTML = `<h1 id=${this.id}>Welcome ${this.name}</h1>`
         container.insertAdjacentHTML('afterbegin',userHTML)
         Book.renderBookForm(this.id)
-        this.renderExistedBooks()
-        this.removeErrors()
-        
+        this.renderExistedBooks()   
     }
 
     renderExistedBooks(){

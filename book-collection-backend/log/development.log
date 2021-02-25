@@ -19450,3 +19450,276 @@ Processing by Api::V1::BooksController#create as JSON
 Completed 200 OK in 37ms (Views: 0.5ms | ActiveRecord: 18.3ms | Allocations: 4136)
 
 
+Started POST "/api/v1/users" for ::1 at 2021-02-25 16:34:55 -0600
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 4085)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-25 16:34:58 -0600
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Zainab"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Zainab"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 652)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2021-02-25 16:34:58 -0600
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:22:in `show'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:23:in `show'
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.4ms | Allocations: 7300)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-25 16:35:33 -0600
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1274)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-25 16:35:36 -0600
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Zainab"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Zainab"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/1
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 644)
+
+
+Started GET "/api/v1/users/1" for ::1 at 2021-02-25 16:35:36 -0600
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:22:in `show'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:23:in `show'
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 2004)
+
+
+Started POST "/api/v1/books" for ::1 at 2021-02-25 16:35:39 -0600
+Processing by Api::V1::BooksController#create as JSON
+  Parameters: {"book"=>{"title"=>"", "author"=>"", "img_url"=>"", "user_id"=>"1"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/books_controller.rb:10:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/books_controller.rb:10:in `create'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 4432)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-25 16:38:51 -0600
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>""}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 1274)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-25 16:38:55 -0600
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Jenna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Jenna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 644)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-02-25 16:38:55 -0600
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:22:in `show'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:23:in `show'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2006)
+
+
+Started POST "/api/v1/books" for ::1 at 2021-02-25 16:38:57 -0600
+Processing by Api::V1::BooksController#create as JSON
+  Parameters: {"book"=>{"title"=>"", "author"=>"", "img_url"=>"", "user_id"=>"4"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/books_controller.rb:10:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:10:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/api/v1/books_controller.rb:10:in `create'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 4163)
+
+
+Started POST "/api/v1/books" for ::1 at 2021-02-25 16:39:07 -0600
+Processing by Api::V1::BooksController#create as JSON
+  Parameters: {"book"=>{"title"=>"My Book", "author"=>"Zainab Omar", "img_url"=>"https://cdn.atwilltech.com/flowerdatabase/p/passover-florals-designers-choice-DC9290220.300.jpg", "user_id"=>"4"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/books_controller.rb:10:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:10:in `create'
+  [1m[36mBook Create (6.6ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "img_url", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "My Book"], ["author", "Zainab Omar"], ["img_url", "https://cdn.atwilltech.com/flowerdatabase/p/passover-florals-designers-choice-DC9290220.300.jpg"], ["user_id", 4], ["created_at", "2021-02-25 22:39:07.098007"], ["updated_at", "2021-02-25 22:39:07.098007"]]
+  ↳ app/controllers/api/v1/books_controller.rb:10:in `create'
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/books_controller.rb:10:in `create'
+Completed 200 OK in 27ms (Views: 0.4ms | ActiveRecord: 17.3ms | Allocations: 4972)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-02-25 16:39:14 -0600
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 1.2ms | Allocations: 7757)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-25 16:39:28 -0600
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Jenna"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Jenna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 642)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-02-25 16:39:28 -0600
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:22:in `show'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:23:in `show'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 2172)
+
+
+Started DELETE "/api/v1/books/10" for ::1 at 2021-02-25 16:39:43 -0600
+Started DELETE "/api/v1/books/10" for ::1 at 2021-02-25 16:39:43 -0600
+Started DELETE "/api/v1/books/10" for ::1 at 2021-02-25 16:39:43 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"10"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:18:in `destroy'
+Processing by Api::V1::BooksController#destroy as */*
+  [1m[36mBook Destroy (19.5ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/books_controller.rb:18:in `destroy'
+  Parameters: {"id"=>"10"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:19:in `destroy'
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 10]]
+  ↳ app/controllers/api/v1/books_controller.rb:18:in `destroy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 2059)
+
+
+Completed 200 OK in 29ms (Views: 0.4ms | ActiveRecord: 19.8ms | Allocations: 3398)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:19:in `destroy'
+  
+NoMethodError (undefined method `delete' for nil:NilClass):
+  
+app/controllers/api/v1/books_controller.rb:19:in `destroy'
+Completed 200 OK in 36ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 6576)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-02-25 16:39:51 -0600
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 1.2ms | Allocations: 7575)
+
+
+Started DELETE "/api/v1/books/9" for ::1 at 2021-02-25 16:39:55 -0600
+Started DELETE "/api/v1/books/9" for ::1 at 2021-02-25 16:39:55 -0600
+Started DELETE "/api/v1/books/9" for ::1 at 2021-02-25 16:39:55 -0600
+Processing by Api::V1::BooksController#destroy as */*
+Processing by Api::V1::BooksController#destroy as */*
+Processing by Api::V1::BooksController#destroy as */*
+  Parameters: {"id"=>"9"}
+  Parameters: {"id"=>"9"}
+  Parameters: {"id"=>"9"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/books_controller.rb:18:in `destroy'
+  ↳ app/controllers/api/v1/books_controller.rb:18:in `destroy'
+  ↳ app/controllers/api/v1/books_controller.rb:18:in `destroy'
+  [1m[36mBook Destroy (0.3ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 9]]
+  [1m[36mBook Destroy (0.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 9]]
+  [1m[36mBook Destroy (19.7ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/api/v1/books_controller.rb:19:in `destroy'
+Completed 200 OK in 30ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 3805)
+
+
+  ↳ app/controllers/api/v1/books_controller.rb:19:in `destroy'
+  ↳ app/controllers/api/v1/books_controller.rb:19:in `destroy'
+Completed 200 OK in 33ms (Views: 0.5ms | ActiveRecord: 20.0ms | Allocations: 4980)
+
+
+Completed 200 OK in 30ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 4087)
+
+
+Started GET "/api/v1/users" for ::1 at 2021-02-25 16:40:04 -0600
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+  [1m[36mBook Load (0.1ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/controllers/api/v1/users_controller.rb:5:in `index'
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 1.4ms | Allocations: 7441)
+
+
+Started POST "/api/v1/users" for ::1 at 2021-02-25 16:40:11 -0600
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"user"=>{"name"=>"Jenna"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Jenna"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/api/v1/users/4
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms | Allocations: 655)
+
+
+Started GET "/api/v1/users/4" for ::1 at 2021-02-25 16:40:11 -0600
+Processing by Api::V1::UsersController#show as JSON
+  Parameters: {"id"=>"4", "user"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/users_controller.rb:22:in `show'
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT "books".* FROM "books" WHERE "books"."user_id" = ?[0m  [["user_id", 4]]
+  ↳ app/controllers/api/v1/users_controller.rb:23:in `show'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.9ms | Allocations: 1851)
+
+
