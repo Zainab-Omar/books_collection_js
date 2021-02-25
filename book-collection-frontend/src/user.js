@@ -46,13 +46,4 @@ class User {
         }
     }
 
-    removeErrors(){
-        let errors = document.getElementsByClassName("errors")
-        if (errors){
-            for (let e of errors) {
-                e.remove()
-            }
-        }
-    }
-
 }

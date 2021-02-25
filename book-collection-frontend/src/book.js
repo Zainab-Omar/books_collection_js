@@ -1,4 +1,4 @@
-class Book {
+class Book { 
     constructor(book){
         this.id = book.id
         this.title = book.title
