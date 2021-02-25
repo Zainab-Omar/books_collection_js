@@ -8,3 +8,8 @@
 [x] fetch request to post a new book (C in curd).
 [x] fetch request to delete a book
 [x] add CSS to my app
+[] remove commented codes
+[] dry my code
+[] write ReadMe 
+[] write blog
+[] record video

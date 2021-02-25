@@ -42,10 +42,10 @@ class Book {
 
         // let errors = document.querySelector(".errors")
         // errors.remove()
-
+        this.removeErrors()
         books_container.insertAdjacentHTML('beforeend', booksHTML)
         this.removeBook()
-        this.removeErrors()
+        
     }
 
     static createBook(user_id){
@@ -88,7 +88,8 @@ class Book {
     }
     
     removeErrors(){
-        let errors = document.getElementsByClassName("errors")
+        // debugger
+        let errors = document.querySelectorAll('.errors');
         if (errors){
             for (let e of errors) {
                 e.remove()
