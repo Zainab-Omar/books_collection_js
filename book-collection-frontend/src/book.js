@@ -40,8 +40,12 @@ class Book {
           </button><br><br>
         </div>`
 
+        // let errors = document.querySelector(".errors")
+        // errors.remove()
+
         books_container.insertAdjacentHTML('beforeend', booksHTML)
         this.removeBook()
+        this.removeErrors()
     }
 
     static createBook(user_id){
@@ -59,9 +63,11 @@ class Book {
                         h2.insertAdjacentHTML('afterend', p)
                     })
                     }
+                    else {
                 e.target.reset();
                 let newBook = new Book(json)
                 newBook.renderBooks()
+                    }
                 
             })
         })
@@ -80,7 +86,13 @@ class Book {
             }
         })
     }
-
     
-    
+    removeErrors(){
+        let errors = document.getElementsByClassName("errors")
+        if (errors){
+            for (let e of errors) {
+                e.remove()
+            }
+        }
+    }
 }

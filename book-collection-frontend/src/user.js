@@ -18,7 +18,6 @@ class User {
                  let p = `<p class="errors">${json.errors}</p>`
                  h1.insertAdjacentHTML('afterend', p)
                  }
-                 
                 let user = json.data
                 let newUser = new User(user, user.attributes)
                 newUser.renderUser()
@@ -29,7 +28,8 @@ class User {
     
     renderUser(){
         const container = document.querySelector('#container')
-        // container.innerHTML = ''
+        // let errors = document.querySelector(".errors")
+        // errors.remove()
         let form = document.querySelector('#form')
         let appTitle = document.querySelector('#app-title')
         form.remove()
@@ -38,6 +38,7 @@ class User {
         container.insertAdjacentHTML('afterbegin',userHTML)
         Book.renderBookForm(this.id)
         this.renderExistedBooks()
+        this.removeErrors()
         
     }
 
@@ -58,6 +59,15 @@ class User {
                 // books_container.insertAdjacentHTML('beforeend', booksHTML)
 
             })
+        }
+    }
+
+    removeErrors(){
+        let errors = document.getElementsByClassName("errors")
+        if (errors){
+            for (let e of errors) {
+                e.remove()
+            }
         }
     }
 
