@@ -6,6 +6,7 @@ class Api::V1::BooksController < ApplicationController
     end
 
     def create
+        #binding.pry
         book = Book.new(book_params)
          if book.save
             render json: book
@@ -15,7 +16,7 @@ class Api::V1::BooksController < ApplicationController
     end
 
     def destroy
-        # binding.pry
+        #binding.pry
         book = Book.find_by(id: params[:id])
         book.delete
         render json: book

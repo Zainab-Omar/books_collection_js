@@ -40,11 +40,9 @@ class Book {
           </button><br><br>
         </div>`
 
-        // let errors = document.querySelector(".errors")
-        // errors.remove()
-        this.removeErrors()
         books_container.insertAdjacentHTML('beforeend', booksHTML)
         this.removeBook()
+        this.removeErrors()
         
     }
 
@@ -57,18 +55,16 @@ class Book {
                 console.log(json.errors)
                 if (json.errors){
                     let h2 = document.querySelector("h2")
-                   //  console.log(json.errors)
                     json.errors.forEach(error => {
                         let p = `<p class="errors">${error}</p>`
                         h2.insertAdjacentHTML('afterend', p)
                     })
-                    }
-                    else {
+                }
+                else {
                 e.target.reset();
                 let newBook = new Book(json)
                 newBook.renderBooks()
-                    }
-                
+                }  
             })
         })
     }
@@ -79,7 +75,6 @@ class Book {
             if (e.target.classList.contains("delete")){
              let bookId = e.target.dataset.bookId;
              console.log(bookId)
-            //  debugger
              fetchRequest.deleteBook(bookId)
              e.target.parentNode.remove()
              
@@ -88,7 +83,6 @@ class Book {
     }
     
     removeErrors(){
-        // debugger
         let errors = document.querySelectorAll('.errors');
         if (errors){
             for (let e of errors) {

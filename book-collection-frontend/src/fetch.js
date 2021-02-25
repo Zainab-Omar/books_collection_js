@@ -16,7 +16,6 @@ class FetchRequest {
                 } 
             })
         })
-        // .then(response => response.json())
         .then(response => {
             console.log(response)
             if (response.ok) {
@@ -44,7 +43,6 @@ class FetchRequest {
             })
 
         })
-        // .then(response => response.json())
         .then(response => {
             console.log(response)
             if (response.ok) {
@@ -57,7 +55,6 @@ class FetchRequest {
     }
 
     deleteBook(bookId){
-        //  debugger
         fetch(`${this.baseUrl}/books/${bookId}`, {
             method: 'DELETE'
         }) 
@@ -66,6 +63,6 @@ class FetchRequest {
           .catch((error) => {
             console.error('Error:', error);
           });  
+        }
+    
     }
-
-}
