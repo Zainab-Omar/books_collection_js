@@ -17,7 +17,6 @@ class FetchRequest {
             })
         })
         .then(response => {
-            console.log(response)
             if (response.ok) {
                 return response.json()
             }
@@ -44,7 +43,7 @@ class FetchRequest {
 
         })
         .then(response => {
-            console.log(response)
+            // console.log(response)
             if (response.ok) {
                 return response.json()
             }
@@ -54,15 +53,11 @@ class FetchRequest {
         })
     }
 
-    deleteBook(bookId){
-        fetch(`${this.baseUrl}/books/${bookId}`, {
+    deleteBook(e){
+        fetch(`${this.baseUrl}/books/${e.target.id}`, {
             method: 'DELETE'
         }) 
-          .then(response => response.json())
-          .then(json => console.log(json))
-          .catch((error) => {
-            console.error('Error:', error);
-          });  
-        }
+      }
     
     }
+    

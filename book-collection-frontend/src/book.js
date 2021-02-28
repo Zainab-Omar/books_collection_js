@@ -29,30 +29,11 @@ class Book {
 
     }
 
-    renderBooks(){
-        const books_container = document.querySelector('#books-container')
-
-        let booksHTML = ` <div class="single-book">
-        <img src="${this.img_url}" class="image">
-        <p>Title: ${this.title}</p>
-        <p>Author Name: ${this.author}</p>
-        <p>Created_at: ${new Date(this.created_at).toLocaleDateString()}</p>
-        <button class="delete" data-book-id=${this.id}>
-            Delete
-          </button><br><br>
-        </div>`
-
-        books_container.insertAdjacentHTML('beforeend', booksHTML)
-        this.removeBook()
-        this.removeErrors()
-        
-    }
-
     static createBook(user_id){
         let book_form = document.querySelector('#book-form')
         book_form.addEventListener("submit", function(e){
         e.preventDefault()
-        
+
         fetchRequest.createNewBook(e, user_id)
         .then(json => {
                 console.log(json.errors)
@@ -72,18 +53,36 @@ class Book {
         })
     }
 
-    removeBook(){
-        let books_container = document.querySelector("#books-container")
-        books_container.addEventListener("click", function(e){
-            if (e.target.classList.contains("delete")){
-             let bookId = e.target.dataset.bookId;
-             console.log(bookId)
-             fetchRequest.deleteBook(bookId)
-             e.target.parentNode.remove()
-             
-            }
+
+    renderBooks(){
+        const books_container = document.querySelector('#books-container')
+
+        let booksHTML = ` <div class="single-book">
+        <img src="${this.img_url}" class="image">
+        <p>Title: ${this.title}</p>
+        <p>Author Name: ${this.author}</p>
+        <p>Created_at: ${new Date(this.created_at).toLocaleDateString()}</p>
+        <button type="button" class="delete" id=${this.id}>
+            Delete
+          </button><br><br>
+        </div>`
+
+        books_container.insertAdjacentHTML('beforeend', booksHTML)
+        let button = document.getElementById(`${this.id}`)
+        this.removeErrors()  
+        this.removeBook(button)
+
+    }
+
+    
+    removeBook(button){
+        button.addEventListener('click', function(e){
+            e.preventDefault()
+            fetchRequest.deleteBook(e)
+                e.target.parentElement.remove();
         })
     }
+    
     
     removeErrors(){
         let errors = document.querySelectorAll('.errors');
