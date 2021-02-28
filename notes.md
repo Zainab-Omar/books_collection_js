@@ -10,6 +10,6 @@
 [x] add CSS to my app
 [x] remove commented codes
 [x] dry my code
-[] write ReadMe 
+[x] write ReadMe 
 [] write blog
 [] record video

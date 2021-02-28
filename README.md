@@ -1,24 +1,17 @@
-# README
+# Welcom to Books Collection JavaScript App
+this app allow users to create their own collection of favorite books. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I use three AJAX calls covering (create and delete requests)
+ 
+# Ruby version
+  '2.6.1'
 
-Things you may want to cover:
+# Database creation
+I use SQLite to create my database.
 
-* Ruby version
+# to start this app 
+1. run rails db:migrate from backend folder (book-collection-backend).
+2. run 'rails s' from backend folder (book-collection-backend).
+3. run 'open index.html' (for mac) or 'explorer.exe' index.html(windows) from frontend folder (book-collection-frontend).
+4. insert you name and enjoy creating your collection of favorite books.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
