@@ -11,5 +11,6 @@
 [x] remove commented codes
 [x] dry my code
 [x] write ReadMe 
-[] write blog
-[] record video
+[x] write blog
+[x] record video
+[x] submit my project
