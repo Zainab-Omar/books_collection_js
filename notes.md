@@ -14,4 +14,4 @@
 [x] write blog
 [x] record video
 [x] submit my project.
-[x] schedule assessment
+[x] schedule assessment.

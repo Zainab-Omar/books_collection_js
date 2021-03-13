@@ -48,6 +48,8 @@ class Book {
                 e.target.reset();
                 let newBook = new Book(json)
                 newBook.renderBooks()
+                // newBook.sortBooks(json)
+
                 }  
             })
         })
@@ -56,6 +58,9 @@ class Book {
 
     renderBooks(){
         const books_container = document.querySelector('#books-container')
+
+        //  let sortButton = `<button class="sort" id=${this.id}> sort by: </button>`
+        //  books_container.insertAdjacentHTML('beforeend', sortButton)
 
         let booksHTML = ` <div class="single-book">
         <img src="${this.img_url}" class="image">
@@ -91,5 +96,22 @@ class Book {
                 e.remove()
             }
         }
+    }
+
+    static sortBooks(booksArray){
+        const books_container = document.querySelector('#books-container')
+        let sort = document.getElementById('sort')
+        sort.addEventListener('click', function(e) {
+           console.log("sort is working")
+            books_container.innerHTML = ""
+            let sortedBooks = booksArray.sort((a, b) => (a.title > b.title) ? 1 : -1)
+            console.log(sortedBooks)
+
+            sortedBooks.forEach(book => {
+                let newBook = new Book(book)
+                newBook.renderBooks()
+            })
+            
+        })
     }
 }

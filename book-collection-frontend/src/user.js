@@ -31,8 +31,15 @@ class User {
         appTitle.remove()
         let userHTML = `<h1 id=${this.id}>Welcome ${this.name}</h1>`
         container.insertAdjacentHTML('afterbegin',userHTML)
+
+        let booksContainer = document.getElementById('books-container')
+        let sortBooks = `<button id="sort">sort alphabetically</button>`
+        booksContainer.insertAdjacentHTML('beforebegin', sortBooks)
+        
         Book.renderBookForm(this.id)
-        this.renderExistedBooks()   
+        this.renderExistedBooks()  
+       
+        Book.sortBooks(this.books) 
     }
 
     renderExistedBooks(){
@@ -42,6 +49,7 @@ class User {
                 newBook.renderBooks()
             })
         }
+       
     }
 
 }
